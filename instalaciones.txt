@@ -1,2 +1,9 @@
 npm install --save-dev typedoc
 npm install --save-dev mocha chai @types/mocha @types/chai ts-node
+
+// Para leer desde entrada usaremos el paquete prompt-sync
+npm i prompt-sync
+npm i --save-dev @types/prompt-sync
+
+// informe del cubrimiento de codigo
+npm install --save-dev nyc coveralls
