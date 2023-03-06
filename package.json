@@ -8,12 +8,8 @@
     "ejer1": "tsc-watch --onSuccess \"node dist/ejercicio-1.js\"",
     "ejer2": "tsc-watch --onSuccess \"node dist/ejercicio-2.js\"",
     "ejer3": "tsc-watch --onSuccess \"node dist/ejercicio-3.js\"",
-    "ejer4": "tsc-watch --onSuccess \"node dist/ejercicio-4.js\"",
-    "ejer5": "tsc-watch --onSuccess \"node dist/ejercicio-5.js\"",
-    "ejer6": "tsc-watch --onSuccess \"node dist/ejercicio-6.js\"",
-    "ejer7": "tsc-watch --onSuccess \"node dist/ejercicio-7.js\"",
-    "ejer8": "tsc-watch --onSuccess \"node dist/ejercicio-8.js\"",
-    "doc": "typedoc"
+    "doc": "typedoc",
+    "coverage": "nyc npm test"
   },
   "keywords": [],
   "author": "",
@@ -21,15 +17,21 @@
   "devDependencies": {
     "@types/chai": "^4.3.4",
     "@types/mocha": "^10.0.1",
+    "@types/prompt-sync": "^4.2.0",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "@typescript-eslint/parser": "^5.51.0",
     "chai": "^4.3.7",
+    "coveralls": "^3.1.1",
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
     "prettier": "^2.8.4",
     "ts-node": "^10.9.1",
     "tsc-watch": "^6.0.0",
-    "typedoc": "^0.23.25"
+    "typedoc": "^0.23.26"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
   }
 }
