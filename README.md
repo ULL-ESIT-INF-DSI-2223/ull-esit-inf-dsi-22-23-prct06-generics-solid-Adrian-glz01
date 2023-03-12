@@ -9,7 +9,11 @@ Para el desarrollo de este informe vamos a tener en cuenta el guión de la prác
 - Algoritmo/Funciones realizadas para la resolución del ejercicio.
 - Dificultades. (En caso de que existan)
 
-Asimismo, 
+Asimismo, se ha realizado un ejercicio en la sesión PE de laboratorio el cual se documentará en este informe.
+
+## Cubrimiento
+
+[![Coverage Status](https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct06-generics-solid-Adrian-glz01/badge.svg?branch=main)](https://coveralls.io/github/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct06-generics-solid-Adrian-glz01?branch=main)
 
 ## Índice
 
