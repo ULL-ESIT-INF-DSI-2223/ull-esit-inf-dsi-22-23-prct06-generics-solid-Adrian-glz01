@@ -1,6 +1,3 @@
-// clase generica para cualquier tipo que implemente los metodos de la clase lista sin usar 
-// funcionalidades proporcionadas por array.prototype solamente []
-
 export class Lista<T extends (string|number|boolean|symbol|Lista<T>)  > { // tengo que ver si meter mas tuipor de datos
   private lista: T[];
 
@@ -17,21 +14,25 @@ export class Lista<T extends (string|number|boolean|symbol|Lista<T>)  > { // ten
   }
 
   /**
+   * Metodo push para añadir elementos a la lista
+   * @param item 
+   */
+  public PUSH_ITEM(item: T): void {
+    this.lista[this.length()] = item;
+  }
+
+  /**
    * Metodo para añadir los elementos de una lista en otra
    * @param array 
    */
-  public append(array: Lista<T> | T ): void { //! Recordatorio: en el informe anotar que queria hacer dos funciones separadas, añadir un push que metiese un elemento, pero asi aprovecho el metodo append para concatenar elementos simples
-    if (array instanceof Lista) { // controlamos el tipo que entra
-      // instanciamos un valor como la longitud de la primera lista +
-      // el tamaño de la segunda lista, este deberia ser el tamaño de la nueva lista
-      const counter = this.lenght() + array.lenght();
-      let j = 0;
-      for (let i = this.lenght(); i < counter; i++) {
-        this.lista[i] = array.getList()[j];
-        j++;
-      }
-    } else {
-      this.lista.push(array);
+  public append(array: Lista<T>): void {
+    // instanciamos un valor como la longitud de la primera lista +
+    // el tamaño de la segunda lista, este deberia ser el tamaño de la nueva lista
+    const counter = this.length() + array.length();
+    let j = 0;
+    for (let i = this.length(); i < counter; i++) {
+      this.lista[i] = array.getList()[j];
+      j++;
     }
   }
 
@@ -62,7 +63,7 @@ export class Lista<T extends (string|number|boolean|symbol|Lista<T>)  > { // ten
     const listaFiltrada = new Lista<T>();
     for (const item of this.lista) {
       if (func(item)) {
-        listaFiltrada.append(item);
+        listaFiltrada.PUSH_ITEM(item);
       }
     }
     return listaFiltrada
@@ -72,7 +73,7 @@ export class Lista<T extends (string|number|boolean|symbol|Lista<T>)  > { // ten
    * Método publico que te devuelve la longitud de la lista
    * @returns 
    */
-  public lenght(): number {
+  public length(): number {
     let counter = 0;
     for (const item of this.lista) {
       counter++;
@@ -91,7 +92,7 @@ export class Lista<T extends (string|number|boolean|symbol|Lista<T>)  > { // ten
     //? RECORDATORIO [MAP SI DEVUELVE UNA NUEVA LISTA// FOREACH NO]
     const listaMap = new Lista<T>();
     for (const item of this.lista) {
-      listaMap.append(funct(item));
+      listaMap.PUSH_ITEM(funct(item));
     }
     return listaMap;
   }
@@ -116,8 +117,8 @@ export class Lista<T extends (string|number|boolean|symbol|Lista<T>)  > { // ten
    */
   public reverse(): Lista<T> {
     const listaReversa = new Lista<T>();
-    for (let i = this.lenght() - 1; i >= 0; i--) {
-      listaReversa.append(this.lista[i]);
+    for (let i = this.length() - 1; i >= 0; i--) {
+      listaReversa.PUSH_ITEM(this.lista[i]);
     }
     return listaReversa;
   }
@@ -126,11 +127,11 @@ export class Lista<T extends (string|number|boolean|symbol|Lista<T>)  > { // ten
    * Metodo que replica el funcionamiento de forEach de array.prototype
    * Dado una lista (la de nuestra clase) y una funcion, itera sobre los elementos de la lista
    * e invoca la funcion pasada como argumento para cada uno de ellos 
-   * @param func 
+   * @param function_ --> funcion que se va a ejecutar en cada elemento de la lista
    */
-  public forEach(func: (item: T) => void) {
+  public forEach(function_: (item: T) => void) {
     for (const item of this.lista) {
-      func(item);
+      function_(item);
     }
   }
   

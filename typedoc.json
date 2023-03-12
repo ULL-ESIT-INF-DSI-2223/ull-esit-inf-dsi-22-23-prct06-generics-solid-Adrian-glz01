@@ -1,6 +1,24 @@
 {
   "entryPoints": [
-    "./src/ejercicio-pe102.ts"    
+    "./src/ejercicio-2/listaClass.ts",
+    "./src/ejercicio-1/basicsStreamableCollectionClass.ts",
+    "./src/ejercicio-1/documentaryClass.ts",
+    "./src/ejercicio-1/documentaryCollectionClass.ts",
+    "./src/ejercicio-1/filmClass.ts",
+    "./src/ejercicio-1/filmCollectionClass.ts",
+    "./src/ejercicio-1/serieClass.ts",
+    "./src/ejercicio-1/serieCollectionClass.ts",
+    "./src/ejercicio-1/strmeableInterface.ts",
+    "./src/ejercicio-3/artistaClass.ts",
+    "./src/ejercicio-3/bibliotecaMusicalClass.ts",
+    "./src/ejercicio-3/cancionClass.ts",
+    "./src/ejercicio-3/discoClass.ts",
+    "./src/ejercicio-3/discografiaClass.ts",
+    "./src/ejercicio-3/singleClass.ts",
+    "./src/ejercicio-pe102/arithmeticableInterface.ts",
+    "./src/ejercicio-pe102/arithmeticalCollectionClass.ts",
+    "./src/ejercicio-pe102/complexClass.ts",
+    "./src/ejercicio-pe102/rationalClass.ts"
   ], 
   "out": "./docs"
 }
